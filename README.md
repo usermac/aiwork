@@ -1,5 +1,5 @@
 # aiwork
-FileMaker database to interact with AI API's
+FileMaker database to interact with OpenAI's API and get an evaluated calculation back in realtime. 
 
 2023-10-23 - AIwork_v2.fmp12 is a Filemaker database to make OpenAI API calls. It offers you a place to put in your prompt and another field to put in *how* you want AI to respond (see last paragraph.) - Brian Ginn
 
