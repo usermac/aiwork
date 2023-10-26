@@ -10,3 +10,7 @@ The most important finding is the "Your response will be formal and terse withou
 https://github.com/usermac/aiwork
 
 P.S. - No support is offered.
+
+Below is a 2 minute video of it working for clarity: 
+https://github.com/usermac/aiwork/assets/4897287/f78659b9-841d-4ef8-b67e-4eca2d183fd4
+
