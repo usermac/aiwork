@@ -13,3 +13,4 @@ P.S. - No support is offered.
 
 ![AIwork](https://github.com/usermac/aiwork/assets/4897287/33b62268-8304-4839-bff2-a16b22129da3)
 
+"Why back in my day, we used to write out our calculations" - Brian
