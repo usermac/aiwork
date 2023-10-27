@@ -7,7 +7,7 @@ You'll need a new api key. If you're in a field on a record once you get your ap
 
 The most important finding is the *"Your response will be formal and terse without comments or commentary and only pure code presented in your response."* to put in the field named ai_custom_instructions_reponse. Use this when asking for a FileMaker calculation. It will respond with code that will get interpreted in field "evaluate." And yes, I know the grammar is bad but it worked so I'm keeping it.  - Brian
 
-"Why back in my day, we used to write out our calculations" - me
+"Why back in my day, we used to write out our calculations"
 
 https://github.com/usermac/aiwork
 
