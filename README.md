@@ -13,7 +13,7 @@ https://github.com/usermac/aiwork
 
 P.S. - No support is offered.
 
-The real time example was an actual live suggestion during my developer talk this past Tuesday (10/24/2023) and you can see it here: https://youtu.be/0d9QaDj5zXI?si=w7MMFcRUABEzfHSw
+The real time example was an actual live suggestion during my developer talk this past Tuesday (10/24/2023) recreated here. You can see it here: https://youtu.be/0d9QaDj5zXI?si=w7MMFcRUABEzfHSw
 
 ![AIwork](https://github.com/usermac/aiwork/assets/4897287/33b62268-8304-4839-bff2-a16b22129da3)
 
