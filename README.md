@@ -91,8 +91,6 @@ Commit Records/Requests [ With dialog: Off ]
 # 
 Exit Script [ Text Result: $null ] 
 ```
-[!NOTE]
-All the calcs in the above except one was done using AI. 
 
 ### ddr_this_layout_fields 
 ```
