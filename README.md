@@ -17,3 +17,88 @@ The real time example was an actual live suggestion during my developer talk thi
 
 ![AIwork](https://github.com/usermac/aiwork/assets/4897287/33b62268-8304-4839-bff2-a16b22129da3)
 
+
+```
+ddr_this_layout_fields
+
+# #DB: AIwork_v2
+# #LN: AIwork
+# #TO: AIwork
+# 
+# 10 Regular Fields found on layout.
+# 
+# FieldComment
+# ai_custom_instructions_reponse        How do you want the AI to answer?
+# ai_message                            This is the core, important response extracted from the raw response.
+# ai_prompt                             What do you want of AI?
+# ai_response_raw                       The raw response from AI.
+# api_end_point                         Where to send this cURL?
+# CreationTimestamp                     Date and time each record was created
+# evaluate                              This will evaluate the code returned from AI automatically to prove the result.
+# ModificationTimestamp                 Date and time each record was last modified
+# OPENAI_API_KEY                        API key for request.
+# time_to_task                          This is the time it took to work this out.
+# 
+# FieldType
+# ai_custom_instructions_reponse        Standard        Text       Indexed          1
+# ai_message                            Standard        Text       Indexed          1
+# ai_prompt                             Standard        Text       Indexed          1
+# ai_response_raw                       Standard        Text       Unindexed        1
+# api_end_point                         Standard        Text       Indexed          1
+# CreationTimestamp                     Standard        Timestamp  Unindexed        1
+# evaluate                              Standard        Text       Indexed          1
+# ModificationTimestamp                 Standard        Timestamp  Unindexed        1
+# OPENAI_API_KEY                        Standard        Text       Indexed          1
+# time_to_task                          Standard        Time       Unindexed        1
+# 
+# FieldStyle
+# ai_custom_instructions_reponse        Standard        
+# ai_message                            Scrolling       
+# ai_prompt                             Scrolling       
+# ai_response_raw                       Scrolling       
+# api_end_point                         Standard        
+# CreationTimestamp                     Standard        
+# evaluate                              Scrolling       
+# ModificationTimestamp                 Standard        
+# OPENAI_API_KEY                        Concealed       
+# time_to_task                          Standard        
+# 
+# FieldBounds                                l     t     r     b   deg
+# ai_custom_instructions_reponse           334   597   976   678     0   642.w    81.h
+# ai_message                               181   235  1151   844     0   970.w   609.h
+# ai_prompt                                181   235   976   565     0   795.w   330.h
+# ai_response_raw                         1389   376  2184   486     0   795.w   110.h
+# api_end_point                            183   274   825   343     0   642.w    69.h
+# CreationTimestamp                        174    35   415    66     0   241.w    31.h
+# evaluate                                 179   888  1149   971     0   970.w    83.h
+# ModificationTimestamp                    684    35   925    66     0   241.w    31.h
+# OPENAI_API_KEY                           183   235   825   266     0   642.w    31.h
+# time_to_task                             420   172   541   203     0   121.w    31.h
+# 
+# 
+# __________________________________________________________ 
+# FieldType function from Claris help as of version 19.5.4: 
+# - The first value is either Standard, StoredCalc, Summary, UnstoredCalc, External(Secure), External(Open), or Global. 
+# - The second value is the field type: text, number, date, time, timestamp, or container. 
+# - The third value is Indexed or Unindexed. 
+# - The fourth value is the maximum number of repetitions defined for the field (if the field isn’t defined as a repeating field, this value is 1). 
+# 
+# FieldStyle function from Claris help as of version 19.5.4: 
+# If the field has a value list associated with it, the FieldStyle function also returns the name of the value list. 
+# - standard field returns Standard. 
+# - standard field with - vertical scroll bar returns Scrolling. 
+# - drop-down list returns Popuplist. 
+# - pop-up menu returns Popupmenu. 
+# - checkbox returns Checkbox. 
+# - radio button returns RadioButton. 
+# - drop-down calendar returns Calendar. 
+# 
+# FieldBounds function from Claris help as of version 19.5.4: 
+# Returns the location, in points, of each field boundary and the field's rotation in degrees. 
+# 
+# How to use: 
+#  Script is portable without dependencies. Copy into any solution and run.  Add shift key when running to clear resulting vars.  Clear the $expert var to suppress this extensive help text. It is under settings within the script. My work flow of investiation means I'll look at one to three or four layouts as that is the task at hand.  Yes, most can be found in the object inspector but this report is  something I wanted in my work life.  I can do this within a miniute so the $$report[XX] global var uses 60 repetition options, one per second and that is the XX part of the var.  It does add simple arithmetic to calc width and height from the FieldBounds fucntion which can help  isolate a possbile slight misalignment and is kind of fun to see. To see the report clearly (it uses spaces to show columns), in the Data Viewer,  "Add to Watch"  will move it to the Watch list and there you can open it and view it as intended. There you can use the built-in search too.  - All the best, Brian 
+# 
+# Report does not include <<Merge Fields>>.
+
+```
