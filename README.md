@@ -19,6 +19,79 @@ The real time example was an actual live suggestion during my developer talk thi
 ![AIwork](https://github.com/usermac/aiwork/assets/4897287/33b62268-8304-4839-bff2-a16b22129da3)
 
 ## Details
+### The "Ask AI" button on layout
+```
+# AI cURL OpenAI in file AIwork_v2
+
+# /*
+ * @SIGNATURE:
+ * AI cURL OpenAI
+ *
+ * @PARAMETERS:
+ *
+ * @HISTORY:
+ * Modified: YYYY-Mon-DD by FName LName
+ * Created: 2023-10-21 by Brian Ginn brian@brianginn.com
+ *
+ * @PURPOSE:
+ * Talk to Open AI via API to get results within FileMaker using the current record.
+ *
+ * @RESULT:
+ * Raw response from OpenAI.
+ *
+ * @ERRORS:
+ * List any errors that may be returned in place of a successful result.
+ *
+ * @NOTES:
+ * Provide any additional information that would be useful knowledge for future developers and reference.
+*/
+
+
+Allow User Abort [ On ]
+Set Error Capture [ On ]
+# 
+# clear vars
+Set Variable [ $OPENAI_API_KEY ; Value: "" ] 
+Set Variable [ $api_end_point ; Value: "" ] 
+Set Variable [ $prompt ; Value: "" ] 
+Set Variable [ $aiprep ; Value: "" ] 
+Set Variable [ $json ; Value: "" ] 
+# 
+# set vars
+Set Variable [ $OPENAI_API_KEY ; Value: AIwork::OPENAI_API_KEY ] 
+Set Variable [ $api_end_point ; Value: AIwork::api_end_point ] 
+Set Variable [ $prompt ; Value: AIwork::ai_prompt & " " & AIwork::ai_custom_instructions_reponse // first attempt below but realized using the set json, it esc the quotes and makes nice all things and embarrassingly enough the calc didn't work anyway. Should of ask AI first. - Brian /… ] 
+Set Variable [ $aiprep ; Value: JSONFormatElements ( JSONSetElement ( "";   [ "role"; "user"; 1 ];   [ "content"; $prompt; 1]  ) ) ] 
+Set Variable [ $json ; Value: JSONSetElement ( "{}" ; 	[ "model" ; "gpt-4" ; JSONString ] ; 	[ "messages" ; "[" & $aiprep & "]" ; JSONArray ] ) ] 
+# 
+# function
+Commit Records/Requests [ With dialog: Off ] 
+# 
+If [ IsEmpty ( $OPENAI_API_KEY ) ] 
+	Beep
+	Show Custom Dialog [ "ERROR" ; "Missing API Key. " ] 
+	Exit Script [ Text Result: $error ] 
+End If
+# 
+Set Field [ AIwork::ai_response_raw ; "" // Sets up for initial value and reset when run again. ] 
+Set Field [ AIwork::ai_message ; "" // this will be the extracted 'message' from the json within the ai response raw. ] 
+# 
+Insert from URL [ Select ; With dialog: Off ; Target: AIwork::ai_response_raw ; $api_end_point ; cURL options: " --header \"Content-Type: application/json\" --header \"Authorization: Bearer " & $OPENAI_API_KEY & "\" --data @$json " ] 
+# 
+# put result in a field
+# 
+Set Field [ AIwork::ai_message ; Let ( [   d22 = JSONListValues ( AIwork::ai_response_raw; "choices" ) ; d23 = JSONListValues ( d22; "message" ) ] ; d23 ) ] 
+# 
+Go to Object [ Object Name: "result" ] 
+# 
+# hard coded fix of OpenAI response removing the last word "assistant" if present.
+Set Field [ AIwork::ai_message ; Let ( [ text = AIwork::ai_message; lastWord = RightWords ( text; 1 ) ] ; If ( lastWord = "assistant" ; Left ( text ; Length ( text ) - Length ( lastWord ) ) ; text ) ) ] 
+# 
+Commit Records/Requests [ With dialog: Off ] 
+# 
+Exit Script [ Text Result: $null ] 
+```
+
 ### ddr_this_layout_fields 
 ```
 # #DB: AIwork_v2
@@ -103,77 +176,5 @@ The real time example was an actual live suggestion during my developer talk thi
 
 ```
 
-### The "Ask AI" button on layout
-```
-# AI cURL OpenAI in file AIwork_v2
-
-# /*
- * @SIGNATURE:
- * AI cURL OpenAI
- *
- * @PARAMETERS:
- *
- * @HISTORY:
- * Modified: YYYY-Mon-DD by FName LName
- * Created: 2023-10-21 by Brian Ginn brian@brianginn.com
- *
- * @PURPOSE:
- * Talk to Open AI via API to get results within FileMaker using the current record.
- *
- * @RESULT:
- * Raw response from OpenAI.
- *
- * @ERRORS:
- * List any errors that may be returned in place of a successful result.
- *
- * @NOTES:
- * Provide any additional information that would be useful knowledge for future developers and reference.
-*/
-
-
-Allow User Abort [ On ]
-Set Error Capture [ On ]
-# 
-# clear vars
-Set Variable [ $OPENAI_API_KEY ; Value: "" ] 
-Set Variable [ $api_end_point ; Value: "" ] 
-Set Variable [ $prompt ; Value: "" ] 
-Set Variable [ $aiprep ; Value: "" ] 
-Set Variable [ $json ; Value: "" ] 
-# 
-# set vars
-Set Variable [ $OPENAI_API_KEY ; Value: AIwork::OPENAI_API_KEY ] 
-Set Variable [ $api_end_point ; Value: AIwork::api_end_point ] 
-Set Variable [ $prompt ; Value: AIwork::ai_prompt & " " & AIwork::ai_custom_instructions_reponse // first attempt below but realized using the set json, it esc the quotes and makes nice all things and embarrassingly enough the calc didn't work anyway. Should of ask AI first. - Brian /… ] 
-Set Variable [ $aiprep ; Value: JSONFormatElements ( JSONSetElement ( "";   [ "role"; "user"; 1 ];   [ "content"; $prompt; 1]  ) ) ] 
-Set Variable [ $json ; Value: JSONSetElement ( "{}" ; 	[ "model" ; "gpt-4" ; JSONString ] ; 	[ "messages" ; "[" & $aiprep & "]" ; JSONArray ] ) ] 
-# 
-# function
-Commit Records/Requests [ With dialog: Off ] 
-# 
-If [ IsEmpty ( $OPENAI_API_KEY ) ] 
-	Beep
-	Show Custom Dialog [ "ERROR" ; "Missing API Key. " ] 
-	Exit Script [ Text Result: $error ] 
-End If
-# 
-Set Field [ AIwork::ai_response_raw ; "" // Sets up for initial value and reset when run again. ] 
-Set Field [ AIwork::ai_message ; "" // this will be the extracted 'message' from the json within the ai response raw. ] 
-# 
-Insert from URL [ Select ; With dialog: Off ; Target: AIwork::ai_response_raw ; $api_end_point ; cURL options: " --header \"Content-Type: application/json\" --header \"Authorization: Bearer " & $OPENAI_API_KEY & "\" --data @$json " ] 
-# 
-# put result in a field
-# 
-Set Field [ AIwork::ai_message ; Let ( [   d22 = JSONListValues ( AIwork::ai_response_raw; "choices" ) ; d23 = JSONListValues ( d22; "message" ) ] ; d23 ) ] 
-# 
-Go to Object [ Object Name: "result" ] 
-# 
-# hard coded fix of OpenAI response removing the last word "assistant" if present.
-Set Field [ AIwork::ai_message ; Let ( [ text = AIwork::ai_message; lastWord = RightWords ( text; 1 ) ] ; If ( lastWord = "assistant" ; Left ( text ; Length ( text ) - Length ( lastWord ) ) ; text ) ) ] 
-# 
-Commit Records/Requests [ With dialog: Off ] 
-# 
-Exit Script [ Text Result: $null ] 
-```
 ## Summary
 One layout, one table, and one button using a single script. 
