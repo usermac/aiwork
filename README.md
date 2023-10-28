@@ -13,12 +13,13 @@ https://github.com/usermac/aiwork
 
 P.S. - No support is offered.
 
+## Sample of actual use
 The real time example was an actual live suggestion during my developer talk this past Tuesday (10/24/2023) recreated here. You can see the original here: https://youtu.be/0d9QaDj5zXI?si=w7MMFcRUABEzfHSw
 
 ![AIwork](https://github.com/usermac/aiwork/assets/4897287/33b62268-8304-4839-bff2-a16b22129da3)
 
-
-## ddr_this_layout_fields 
+## Details
+### ddr_this_layout_fields 
 ```
 # #DB: AIwork_v2
 # #LN: AIwork
@@ -102,7 +103,7 @@ The real time example was an actual live suggestion during my developer talk thi
 
 ```
 
-## The "Ask AI" button script below
+### The "Ask AI" button on layout
 ```
 # AI cURL OpenAI in file AIwork_v2
 
