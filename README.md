@@ -177,4 +177,4 @@ Exit Script [ Text Result: $null ]
 ```
 
 ## Summary
-One layout, one table, and one button using a single script. 
+One layout, one table, and one button. 
