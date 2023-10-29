@@ -175,6 +175,3 @@ Exit Script [ Text Result: $null ]
 # Report does not include <<Merge Fields>>.
 
 ```
-
-## Summary
-One layout, one table, and one button. 
