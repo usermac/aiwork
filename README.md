@@ -19,7 +19,7 @@ The real time example was an actual live suggestion during my developer talk thi
 ![AIwork](https://github.com/usermac/aiwork/assets/4897287/33b62268-8304-4839-bff2-a16b22129da3)
 
 ## Details
-### The "Ask AI" button on layout
+### The "Ask AI" button script
 ```
 # AI cURL OpenAI in file AIwork_v2
 
