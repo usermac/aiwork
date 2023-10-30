@@ -3,7 +3,7 @@ FileMaker database to interact with OpenAI's API, get a pure calculation result 
 
 2023-10-23 - AIwork_v2.fmp12 is a Filemaker database to make OpenAI API calls. It offers you a place to put in your prompt and another field to put in *how* you want AI to respond (see last paragraph.)
 
-You'll need a new api key. If you're in a field on a record once you get your api call to work and then create a new record, it will copy over the setting as before. Welcome to change this to your liking. Sample request have been kept in the file so you can see what it does.
+You'll need a new api key. If you're in a field on a record once you get your api call to work and then create a new record, it will copy over the setting as before. Welcome to change this to your liking. Sample request have been kept in the file so you can see what it does. Granted, many are repetitive but needed to test. 
 
 The most important finding is the *"Your response will be formal and terse without comments or commentary and only pure code presented in your response."* to put in the field named ai_custom_instructions_reponse. Use this when asking for a FileMaker calculation. It will respond with code that will get interpreted in field "evaluate." And yes, I know the grammar is bad but it worked so I'm keeping it.  - Brian
 
