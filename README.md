@@ -175,6 +175,6 @@ Exit Script [ Text Result: $null ]
 ```
 ## Cost to Operate
 
-I started using GPT-4 on October 1st, 2023. So far this month, I've spent $5.77USD on top of the $20 monthly subscription fee. There's still one day left in October, so that number may change slightly.
+I started using GPT-4 heavily for this project on October 1st, 2023. I had been using it more casually since it first became available to me on December 11th, 2022, but really ramped up my usage this month as I began relying on it heavily for this particular project. So far this month, I've spent $5.77USD on top of the $20 monthly subscription fee. There's still one day left in October, so that number may change slightly.
 
 Overall, it took some trial and error to figure out how to best use GPT-4 and prompt it in a way that provides helpful responses. But now that I've got the hang of it, I find the service incredibly useful. The additional costs on top of the base subscription have been worth it for me, considering how much time and effort GPT-4 has saved me. And I expect the value I get from it will only increase as I continue.
