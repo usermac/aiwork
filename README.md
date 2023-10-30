@@ -9,7 +9,7 @@ The most important finding is the *"Your response will be formal and terse witho
 
 https://github.com/usermac/aiwork
 
-P.S. - No support is offered.
+PS - No support is offered.
 
 ## Sample of actual use
 The real time example was an actual live suggestion during my developer talk this past Tuesday (10/24/2023) recreated here. You can see the original here: https://youtu.be/0d9QaDj5zXI?si=w7MMFcRUABEzfHSw
