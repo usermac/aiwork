@@ -1,7 +1,9 @@
 # aiwork
+_2023-11-04 update - And now a recovery from the low quality results of the past days. Looks like results are getting better. - Brian_
+
 _2023-11-01 update - It appears OpenAI's model is updated from what I've read from tech news and I would agree as my results have been worse since Halloween through today. It was good while it lasted. - Brian_
 
-FileMaker database to interact with OpenAI's API, get a pure calculation result returned, then evaluate that result in real time. 
+FileMaker database* to interact with OpenAI's API, get a pure calculation result returned, then evaluate that result in real time. 
 
 2023-10-23 - AIwork_v2.fmp12 is a Filemaker database to make OpenAI API calls. It offers you a place to put in your prompt and another field to put in *how* you want AI to respond (see last paragraph.)
 
