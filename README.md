@@ -316,6 +316,68 @@ End If
 Exit Script [ Text Result: $null ] 
 ```
 
+```
+# Isolate Markdown code in file AIwork_v3
+
+# /*
+ * @SIGNATURE:
+ * Isolate Markdown code
+ *
+ * @PARAMETERS:
+ *
+ * @HISTORY:
+ * Modified: YYYY-Mon-DD by FName LName
+ * Created: 2023-11-06 by Brian Ginn brian@brianginn.com
+ *
+ * @PURPOSE:
+ * If the response has code marked in markdown ("```"), remove. Also the word "FileMaker" which it likes to include.
+ *
+ * @RESULT:
+ * Description of the value returned when have a successful result.
+ *
+ * @ERRORS:
+ * List any errors that may be returned in place of a successful result.
+ *
+ * @NOTES:
+ * A button is on the result tab. It also automatically runs if you choose "Autopilot".
+*/
+
+
+Allow User Abort [ On ]
+Set Error Capture [ On ]
+# 
+# clear vars
+Set Variable [ $ai_message ; Value: "" ] 
+# 
+# set vars
+Set Variable [ $ai_message ; Value: AIwork::ai_message ] 
+# 
+# 
+# function
+# check if it has the markdown code marks
+If [ PatternCount ( $ai_message; "```FileMaker" & Char (13) /* carriage return */ ) ] 
+	# clean up if it also contains the word "FileMaker"
+	Set Variable [ $ai_message ; Value: Let ( [   textContent = AIwork::ai_message;  // Replace with the actual field or variable containing the text   startMark = "```FileMaker" & Char (13);   endMark = "```";   startPos = Position ( textContent ; startMark ; 1 ; 1 ) + Length ( startMark );  … ] 
+	# now set the field as cleaned
+	Set Field [ AIwork::ai_message ; TrimAll ( $ai_message; ""; 0 ) // Trims all leading and trailing whitespace, but leaves multiple spaces between words intact. ] 
+	Exit Script [ Text Result: $null ] 
+End If
+# 
+# otherwise clean up standard markdown code markers if present
+If [ PatternCount ( $ai_message; "```" ) ] 
+	Set Variable [ $ai_message ; Value: Let ( [   textContent = AIwork::ai_message;  // Replace with the actual field or variable containing the text   startMark = "```";   endMark = "```";   startPos = Position ( textContent ; startMark ; 1 ; 1 ) + Length ( startMark );   endPos = Position ( … ] 
+	# now set the field as cleaned
+	Set Field [ AIwork::ai_message ; TrimAll ( $ai_message; ""; 0 ) // Trims all leading and trailing whitespace, but leaves multiple spaces between words intact. ] 
+	Exit Script [ Text Result: $null ] 
+Else
+	Beep
+	Exit Script [ Text Result: $null ] 
+End If
+# 
+# 
+Exit Script [ Text Result: $null ] 
+```
+
 _________________________________________________________________________________________________
 v2 
 
