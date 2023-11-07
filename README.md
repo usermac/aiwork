@@ -1,4 +1,23 @@
 # aiwork
+v3
+2023-11-06 - v3 change log:
+I wanted an autopilot so I created that too. It lets the machine "ask AI" as many times as you like. (and does auto-clean up, see next item.)
+Added a script to clean up the response if its has extra text and has the markdown code symbols "```". This is automatic with Autopilot. It is manual otherwise with a button on the result tab.
+OpenAI Dev Day 2023 was today so I changed the model from "gpt-4" to "gpt-4-1106-preview".  Welcome to change this to your liking.
+Added to the script menu: CTRL/CMD+1 = "Ask AI" 
+Changed tab fields' anchors for resize for front end and result tab.
+added "ask_button_push_count" field. I adjusted the script to add each time the "Ask AI" button is pushed and show it on the results tab.
+Added clipboard script to copy fields with icons beginning with result tab. Done in the OpenAI web UI style.
+added mark and mark log
+Added "about..." link to GitHub
+Added extra help in the tool tip for "ai_message" using the shift key
+Added to script menu: #1 is "Ask AI", #2 is nav to front end tab, and #3 is nav to result tab (added these last two script for just this purpose.) 
+File Option icon added to file. Made by DALL•E 3 in a single web request.
+- Brian
+
+Functionally, you can ignore this update as v2 works fine as is. It even does ExecuteSQL statements which I didn't think of trying until now but they work or get close.
+
+v2 
 _2023-11-04 update - And now a recovery from the low quality results of the past days. Looks like results are getting better. - Brian_
 
 _2023-11-01 update - It appears OpenAI's model is updated from what I've read from tech news and I would agree as my results have been worse since Halloween through today. It was good while it lasted. - Brian_
