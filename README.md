@@ -1,5 +1,7 @@
 # aiwork
 
+FileMaker database to interact with OpenAI's API, get a pure calculation result returned, then evaluate that result in real time. 
+
 v3
 
 2023-11-06 - v3 change log:
