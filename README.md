@@ -18,7 +18,6 @@ Added clipboard script to copy fields with icons beginning with result tab. Done
 added mark and mark log
 Added "about..." link to GitHub
 Added extra help in the tool tip for "ai_message" using the shift key
-Added to script menu: #1 is "Ask AI", #2 is nav to front end tab, and #3 is nav to result tab (added these last two script for just this purpose.) 
 File Option icon added to file. Made by DALL•E 3 in a single web request.
 - Brian
 ```
