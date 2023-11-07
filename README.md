@@ -2,6 +2,8 @@
 
 FileMaker database to interact with OpenAI's API, get a pure calculation result returned, then evaluate that result in real time. 
 
+**You will need an an OpenAI api key.**
+
 v3
 
 2023-11-06 - v3 change log:
@@ -21,8 +23,6 @@ File Option icon added to file. Made by DALL•E 3 in a single web request.
 - Brian
 ```
 Functionally, you can ignore this update as v2 works fine as is. It even does ExecuteSQL statements which I didn't think of trying until now but they work or get close.
-
-**You will need a new OpenAI api key.**
 
 ```
 # /*
