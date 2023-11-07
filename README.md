@@ -6,7 +6,7 @@ v3
 
 2023-11-06 - v3 change log:
 ```
-I wanted an autopilot so I created that too. It lets the machine "ask AI" as many times as you like. (and does auto-clean up, see next item.)
+Autopilot wille "ask AI" as many times as you like (and does auto-clean up, see next item.)
 Added a script to clean up the response if its has extra text and has the markdown code symbols "```". This is automatic with Autopilot. It is manual otherwise with a button on the result tab.
 OpenAI Dev Day 2023 was today so I changed the model from "gpt-4" to "gpt-4-1106-preview".  Welcome to change this to your liking.
 Added to the script menu: CTRL/CMD+1 = "Ask AI" 
@@ -21,6 +21,8 @@ File Option icon added to file. Made by DALL•E 3 in a single web request.
 - Brian
 ```
 Functionally, you can ignore this update as v2 works fine as is. It even does ExecuteSQL statements which I didn't think of trying until now but they work or get close.
+
+You will need a new OpenAI api key. 
 
 ```
 # /*
