@@ -2,7 +2,7 @@
 
 FileMaker database to interact with OpenAI's API, get a pure calculation result returned, then evaluate that result in real time. 
 
-**You will need an an OpenAI api key.**
+**You will need an an OpenAI api key. Note the model in this version allows only 100 request per day as it is a preview.**
 
 v3
 
