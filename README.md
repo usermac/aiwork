@@ -19,6 +19,7 @@ added mark and mark log
 Added "about..." link to GitHub
 Added extra help in the tool tip for "ai_message" using the shift key
 File Option icon added to file. Made by DALL•E 3 in a single web request.
+For front end tab, ai_message is now autocomplete.
 - Brian
 ```
 Functionally, you can ignore this update as v2 works fine as is. It even does ExecuteSQL statements which I didn't think of trying until now but they work or get close.
