@@ -4,6 +4,8 @@ FileMaker database to interact with OpenAI's API, get a pure calculation result 
 
 **You will need an an OpenAI api key. Note the model in this version allows only 100 request per day as it is a preview.**
 
+Objective: To achieve the same level of proficiency as individuals who use Integrated Development Environments (IDEs) with code completion features, or those who directly request OpenAI to compose Python code, which it does proficiently.
+
 v3
 
 2023-11-06 - v3 change log:
